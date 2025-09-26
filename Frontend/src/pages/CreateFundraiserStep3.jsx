@@ -27,7 +27,7 @@ const CreateFundraiserStep3 = () => {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/fundraisers/step3",
+        "https://donatehere-mini-project.onrender.com/api/fundraisers/step3",
         { fundraiserId, bankName, accountNumber, ifsc },
         { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
       );

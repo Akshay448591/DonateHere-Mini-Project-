@@ -13,7 +13,7 @@ const SuperAdminHandleAdmins = () => {
   const fetchUsers = async () => {
     setLoading(true);
     try {
-      const res = await axios.get("http://localhost:5000/api/users", {
+      const res = await axios.get("https://donatehere-mini-project.onrender.com/api/users", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setUsers(res.data.users || []);
@@ -36,7 +36,7 @@ const SuperAdminHandleAdmins = () => {
     try {
       setUpdatingUserId(userId);
       await axios.patch(
-        `http://localhost:5000/api/users/${userId}/role`,
+        `https://donatehere-mini-project.onrender.com/api/users/${userId}/role`,
         { role: newRole },
         { headers: { Authorization: `Bearer ${token}` } }
       );

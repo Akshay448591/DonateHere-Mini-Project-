@@ -28,7 +28,7 @@ const ProfilePage = () => {
 
       const payload = { newPassword: password };
 
-      const res = await axios.post(`http://localhost:5000${endpoint}`, payload, {
+      const res = await axios.post(`https://donatehere-mini-project.onrender.com/${endpoint}`, payload, {
         headers: { Authorization: `Bearer ${token}` },
       });
 

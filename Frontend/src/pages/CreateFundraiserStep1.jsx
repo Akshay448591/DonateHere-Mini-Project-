@@ -27,7 +27,7 @@ const CreateFundraiserStep1 = () => {
     setSubmitting(true);
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/fundraisers/step1",
+        "https://donatehere-mini-project.onrender.com/api/fundraisers/step1",
         { title, description, category, target: target || undefined },
         { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
       );

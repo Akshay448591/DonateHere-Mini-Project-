@@ -11,7 +11,7 @@ const CategoryPage = () => {
   useEffect(() => {
     const fetchFundraisers = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/fundraisers/search?query=${category}`);
+        const res = await axios.get(`https://donatehere-mini-project.onrender.com/api/fundraisers/search?query=${category}`);
         setFundraisers(res.data.fundraisers || []);
       } catch (err) {
         console.error(err);

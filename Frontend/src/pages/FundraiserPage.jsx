@@ -44,7 +44,7 @@ const CheckoutForm = ({ fundraiser, onDonationSuccess }) => {
       // 1️⃣ Create PaymentIntent on server
       console.log("Creating PaymentIntent...");
       const { data } = await axios.post(
-        "http://localhost:5000/api/fundraisers/create-payment-intent",
+        "https://donatehere-mini-project.onrender.com/api/fundraisers/create-payment-intent",
         {
           amount,
           fundraiserId: fundraiser._id,
@@ -87,7 +87,7 @@ const CheckoutForm = ({ fundraiser, onDonationSuccess }) => {
 
         // Update fundraiser donations in DB
         await axios.post(
-          "http://localhost:5000/api/fundraisers/donate",
+          "https://donatehere-mini-project.onrender.com/api/fundraisers/donate",
           {
             fundraiserId: fundraiser._id,
             amount,
@@ -162,7 +162,7 @@ const FundraiserPage = () => {
     const fetchFundraiser = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/fundraisers/published/${id}`
+          `https://donatehere-mini-project.onrender.com/api/fundraisers/published/${id}`
         );
         console.log("Fetched fundraiser:", res.data);
         setFundraiser(res.data);

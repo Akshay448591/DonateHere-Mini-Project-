@@ -18,7 +18,7 @@ const PublishedFundraisers = () => {
   useEffect(() => {
     const fetchFundraisers = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/fundraisers/published");
+        const res = await axios.get("https://donatehere-mini-project.onrender.com/api/fundraisers/published");
         setFundraisers(res.data);
       } catch (err) {
         console.error(err);
@@ -56,7 +56,7 @@ const PublishedFundraisers = () => {
       const headers = token ? { Authorization: `Bearer ${token}` } : {};
 
       const res = await axios.post(
-        "http://localhost:5000/api/fundraisers/donate",
+        "https://donatehere-mini-project.onrender.com/api/fundraisers/donate",
         {
           fundraiserId: selectedFundraiser._id,
           amount,

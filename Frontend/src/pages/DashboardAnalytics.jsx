@@ -26,7 +26,7 @@ const DashboardAnalytics = () => {
           ? "/api/user/dashboard" 
           : "/api/admin/dashboard"; // admin and superadmin share the same route
 
-        const res = await axios.get(`http://localhost:5000${endpoint}`, {
+        const res = await axios.get(`https://donatehere-mini-project.onrender.com${endpoint}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 

@@ -12,7 +12,7 @@ const SuperAdminPublishedFundraisers = () => {
   useEffect(() => {
     const fetchPublished = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/fundraisers/published", {
+        const res = await axios.get("https://donatehere-mini-project.onrender.com/api/fundraisers/published", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setFundraisers(res.data);
@@ -32,7 +32,7 @@ const SuperAdminPublishedFundraisers = () => {
     if (!window.confirm("Are you sure you want to delete this fundraiser?")) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/fundraisers/${id}`, {
+      await axios.delete(`https://donatehere-mini-project.onrender.com/api/fundraisers/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setFundraisers((prev) => prev.filter((f) => f._id !== id));

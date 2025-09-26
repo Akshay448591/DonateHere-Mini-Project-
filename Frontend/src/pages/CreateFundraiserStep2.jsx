@@ -29,7 +29,7 @@ const CreateFundraiserStep2 = () => {
     formData.append("fundraiserId", fundraiserId);
 
     try {
-      await axios.post("http://localhost:5000/api/fundraisers/step2", formData, {
+      await axios.post("https://donatehere-mini-project.onrender.com/api/fundraisers/step2", formData, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
           "Content-Type": "multipart/form-data",

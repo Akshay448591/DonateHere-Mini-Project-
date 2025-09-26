@@ -12,7 +12,7 @@ const SuperAdminDashboardFundraisers = () => {
     const fetchVerified = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:5000/api/fundraisers/verified",
+          "https://donatehere-mini-project.onrender.com/api/fundraisers/verified",
           { headers: { Authorization: `Bearer ${token}` } }
         );
         setFundraisers(res.data);
@@ -32,7 +32,7 @@ const SuperAdminDashboardFundraisers = () => {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/fundraisers/publish",
+        "https://donatehere-mini-project.onrender.com/api/fundraisers/publish",
         { fundraiserId: id },
         { headers: { Authorization: `Bearer ${token}` } }
       );

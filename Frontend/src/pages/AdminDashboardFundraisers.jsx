@@ -10,7 +10,7 @@ const AdminDashboardFundraisers = () => {
   useEffect(() => {
     const fetchPending = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/fundraisers/pending", {
+        const res = await axios.get("https://donatehere-mini-project.onrender.com/api/fundraisers/pending", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setFundraisers(res.data || []); 
@@ -35,8 +35,8 @@ const AdminDashboardFundraisers = () => {
     try {
       const endpoint =
         action === "verify"
-          ? "http://localhost:5000/api/fundraisers/verify"
-          : "http://localhost:5000/api/fundraisers/reject";
+          ? "https://donatehere-mini-project.onrender.com/api/fundraisers/verify"
+          : "https://donatehere-mini-project.onrender.com/api/fundraisers/reject";
 
       await axios.post(
         endpoint,

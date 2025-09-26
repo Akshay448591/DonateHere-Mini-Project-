@@ -10,7 +10,7 @@ const TrendingFundraisers = () => {
   useEffect(() => {
     const fetchTrending = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/fundraisers/published");
+        const res = await axios.get("https://donatehere-mini-project.onrender.com/api/fundraisers/published");
         const sorted = res.data
           .sort((a, b) => (b.amountRaised || 0) - (a.amountRaised || 0))
           .slice(0, 4);
